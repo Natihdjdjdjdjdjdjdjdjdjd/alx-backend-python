@@ -14,7 +14,7 @@ class TestGithubOrgClient(TestCase):
     """"Class that defines attributes to test client.GithubOrgClient class"""
 
     @parameterized.expand([("google"), ("abc")])
-    @patch('test_client.get_json', return_value={"payload": True})
+    @patch('client.get_json', return_value={"payload": True})
     def test_org(self, org_name, mock):
         """test for GithubOrgClient.org  that returns the correct value"""
 
@@ -38,7 +38,7 @@ class TestGithubOrgClient(TestCase):
             self.assertEqual(myres, mock.return_value.get("repos_url"))
             mock.assert_called_once
 
-    @patch("test_client.get_json", return_value=[{"name": "Test value"}])
+    @patch("client.get_json", return_value=[{"name": "Test value"}])
     def test_public_repos(self, mock):
         """Method to test GithubOrgClient.public_rep function"""
 
