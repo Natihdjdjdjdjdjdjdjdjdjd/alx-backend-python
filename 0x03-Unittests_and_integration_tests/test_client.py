@@ -14,7 +14,7 @@ class TestGithubOrgClient(TestCase):
     """"Class that defines attributes to test client.GithubOrgClient class"""
 
     @parameterized.expand([("google"), ("abc")])
-    @patch('client.get_json', return_value={"payload": True})
+    @patch('test_client.get_json', return_value={"payload": True})
     def test_org(self, org_name, mock):
         """test for GithubOrgClient.org  that returns the correct value"""
 
